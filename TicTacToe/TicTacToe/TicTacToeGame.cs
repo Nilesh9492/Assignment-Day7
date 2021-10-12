@@ -13,6 +13,9 @@ namespace TicTacToe
             {
                 board[i] = ' ';
             }
+        }
+        public void showBoard()
+        {
             Console.WriteLine(board[0] + " | " + board[1] + " | " + board[2]);
             Console.WriteLine("_________");
             Console.WriteLine(board[3] + " | " + board[4] + " | " + board[5]);
@@ -37,5 +40,6 @@ namespace TicTacToe
             else
                 compInput = 'X';
         }
+        
     }
 }
