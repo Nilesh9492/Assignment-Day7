@@ -22,6 +22,26 @@ namespace TicTacToe
             Console.WriteLine("_________");
             Console.WriteLine(board[6] + " | " + board[7] + " | " + board[8]);
         }
+        public char[] getBoard()
+        {
+            char[] boardCopy = new char[10];
+            Array.Copy(board, boardCopy, board.Length);
+            return boardCopy;
+        }
+        private bool IfPositionFree(char[] b, int position)
+        {
+            if (b[position] == ' ')
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private void givingPosition(char[] b, int position, char playerInput)
+        {
+            b[position] = playerInput;
+        }
         public void chooseInput()
         {
             char playerInput = ' ';
@@ -71,7 +91,7 @@ namespace TicTacToe
 
 
         }
-        public bool winCondition(char input)
+        public bool winCondition(char[] b,char input)
         {
             bool topRow = (board[1] == input && board[2] == input && board[3] == input);
             bool middleRow = (board[4] == input && board[5] == input && board[6] == input);
@@ -82,6 +102,32 @@ namespace TicTacToe
             bool firstDiagonal = (board[1] == input && board[5] == input && board[9] == input);
             bool secondDiagonal = (board[3] == input && board[5] == input && board[7] == input);
             return topRow || middleRow || bottomRow || leftCol || rightCol || middleCol || firstDiagonal || secondDiagonal;
+        }
+        
+
+        public int WinningMove(char input)
+        {
+            for (int i = 1; i < board.Length; i++)
+            {
+                char[] boardCopy = getBoard();
+                if (IfPositionFree(boardCopy, i))
+                {
+                    givingPosition(boardCopy, i, input);
+                    if (winCondition(boardCopy, input))
+                    {
+                        return i;
+                    }
+                        
+                }
+            }
+            return 0;
+        }
+        public int ComputerMove(char compInput)
+        {
+            int winningMove = WinningMove(compInput);
+            if (winningMove != 0)
+                return winningMove;
+            return 0;
         }
 
     }
