@@ -10,6 +10,8 @@ namespace TicTacToe
             ticTacToe.CreateGameBoard();
             ticTacToe.chooseInput();
             ticTacToe.showBoard();
+            string firstAttempt = ticTacToe.tossToPlayfirst();
+            Console.WriteLine(firstAttempt + " will play first");
             ticTacToe.position();
 
         }

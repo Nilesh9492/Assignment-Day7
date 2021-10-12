@@ -56,8 +56,18 @@ namespace TicTacToe
                 }
 
             }
-            
+           
+        }
+              
+        public string tossToPlayfirst()
+        {
+            Random random = new Random();
+            int choice = random.Next(0, 2);
 
+            if (choice == 1)
+                return "User";
+            else
+                return "Computer";
 
 
         }
