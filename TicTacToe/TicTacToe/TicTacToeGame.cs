@@ -122,8 +122,9 @@ namespace TicTacToe
             }
             return 0;
         }
-        public int ComputerMove(char compInput)
+        public int ComputerMove()
         {
+            
             int winningMove = WinningMove(compInput);
             if (winningMove != 0)
                 return winningMove;

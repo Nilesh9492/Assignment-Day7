@@ -13,7 +13,14 @@ namespace TicTacToe
             string firstAttempt = ticTacToe.tossToPlayfirst();
             Console.WriteLine(firstAttempt + " will play first");
             ticTacToe.position();
-            
+            if (firstAttempt == "Computer")
+            {
+                Console.WriteLine("Computer Move : " + ticTacToe.ComputerMove());
+            }
+            else
+            {
+                ticTacToe.position();
+            }
 
         }
         public static TicTacToeGame ticTacToe = new TicTacToeGame();
