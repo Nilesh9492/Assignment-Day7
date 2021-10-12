@@ -13,6 +13,7 @@ namespace TicTacToe
             string firstAttempt = ticTacToe.tossToPlayfirst();
             Console.WriteLine(firstAttempt + " will play first");
             ticTacToe.position();
+            
 
         }
         public static TicTacToeGame ticTacToe = new TicTacToeGame();

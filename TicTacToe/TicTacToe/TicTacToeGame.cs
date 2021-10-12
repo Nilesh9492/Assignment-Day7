@@ -71,6 +71,18 @@ namespace TicTacToe
 
 
         }
+        public bool winCondition(char input)
+        {
+            bool topRow = (board[1] == input && board[2] == input && board[3] == input);
+            bool middleRow = (board[4] == input && board[5] == input && board[6] == input);
+            bool bottomRow = (board[7] == input && board[8] == input && board[9] == input);
+            bool leftCol = (board[1] == input && board[4] == input && board[7] == input);
+            bool middleCol = (board[2] == input && board[5] == input && board[8] == input);
+            bool rightCol = (board[3] == input && board[6] == input && board[9] == input);
+            bool firstDiagonal = (board[1] == input && board[5] == input && board[9] == input);
+            bool secondDiagonal = (board[3] == input && board[5] == input && board[7] == input);
+            return topRow || middleRow || bottomRow || leftCol || rightCol || middleCol || firstDiagonal || secondDiagonal;
+        }
 
     }
 }
