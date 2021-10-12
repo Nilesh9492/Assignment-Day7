@@ -40,6 +40,27 @@ namespace TicTacToe
             else
                 compInput = 'X';
         }
-        
+        public void position()
+        {
+            int userPositon = 0;
+            
+            Console.Write("Choose the location on board from position 1 to 9 : ");
+            while (userPositon < 1 || userPositon > 10 || board[userPositon] != ' ')
+            {
+                userPositon = Convert.ToInt32(Console.ReadLine());
+                if (userPositon < 1 || userPositon > 10)
+                    Console.Write("Please enter a position from 1 to 9: ");
+                else if (board[userPositon] != ' ')
+                {
+                    Console.Write("Position " + userPositon + " is already occupied. Enter some other position : ");
+                }
+
+            }
+            
+
+
+
+        }
+
     }
 }

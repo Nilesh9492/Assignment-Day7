@@ -10,6 +10,7 @@ namespace TicTacToe
             ticTacToe.CreateGameBoard();
             ticTacToe.chooseInput();
             ticTacToe.showBoard();
+            ticTacToe.position();
 
         }
         public static TicTacToeGame ticTacToe = new TicTacToeGame();
