@@ -8,6 +8,7 @@ namespace TicTacToe
         {
             Console.WriteLine("Welcome to TicTacToe Game !");
             ticTacToe.CreateGameBoard();
+            ticTacToe.chooseInput();
 
         }
         public static TicTacToeGame ticTacToe = new TicTacToeGame();
